@@ -9,12 +9,6 @@ test.describe.only("Transfer Founds and Meke Payments", () =>{
         await page.click("text=Sign in");
         
         await page.goto("http://zero.webappsecurity.com/");
-
-        // const userIcon = await page.locator(".icon-cog");
-        // await expect(userIcon).toBeVisible();
-
-        // await page.goto("http://zero.webappsecurity.com/logout.html");
-        // await expect(page).toHaveURL("http://zero.webappsecurity.com/index.html");
     });
 
     test("Transfer founds", async ({page})=>{
