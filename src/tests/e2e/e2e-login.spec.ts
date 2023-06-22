@@ -1,32 +1,27 @@
 import {test, expect} from '@playwright/test';
+import { LoginPage } from '../../page-objects/LoginPage';
 
-test.describe.parallel("Login / Logout Flow", ()=>{
+test.describe.parallel.only("Login / Logout Flow", ()=>{
+    let loginPage: LoginPage;
+
     // Before Hook
-
     test.beforeEach(async({page})=>{
-        await page.goto("http://zero.webappsecurity.com/");
+        loginPage = new LoginPage(page);       
+        loginPage.visit();
     });
 
     // Negative scenario
     test("Negative scenario for Loin", async({page})=>{
-        await page.click("#signin_button");
-        await page.type("#user_login", "invalid username");
-        await page.type("#user_password", "invalid password");
-        await page.click("text=Sign in");
-        
-        const errorMessage = await page.locator(".alert-error");
-        await expect(errorMessage).toContainText("Login and/or password are wrong.");
+        await loginPage.login("invalid username", "invalid password");       
+        await loginPage.assertErrorMessage();
     });
 
     // Positive scenario
-    test("Positive scenario for Loin", async({page})=>{
-        await page.click("#signin_button");
-        await page.type("#user_login", "username");
-        await page.type("#user_password", "password");
-        await page.click("text=Sign in");
+    test.only("Positive scenario for Loin", async({page})=>{
+        await loginPage.visit();
+        await loginPage.login("username", "password");
+        await loginPage.visit();
         
-        await page.goto("http://zero.webappsecurity.com/");
-
         const userIcon = await page.locator(".icon-cog");
         await expect(userIcon).toBeVisible();
 

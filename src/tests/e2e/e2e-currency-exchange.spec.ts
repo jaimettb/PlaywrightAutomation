@@ -11,7 +11,7 @@ test.describe("Currency Exchange", ()=>{
         await page.goto("http://zero.webappsecurity.com/");
     });
 
-    test.only("Should exchange currency", async({page})=>{
+    test("Should exchange currency", async({page})=>{
         await page.click("#online-banking");
         await page.click("#pay_bills_link");
         await page.click("a[href='#ui-tabs-3']");
