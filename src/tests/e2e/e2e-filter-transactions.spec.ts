@@ -1,17 +1,17 @@
 import { test, expect } from "@playwright/test";
+import {LoginPage} from '../../page-objects/LoginPage';
 
 test.describe('Filter Transactions', ()=>{
+    let loginPage:LoginPage;
+    
     test.beforeEach(async ({page})=>{
-        await page.goto("http://zero.webappsecurity.com/");
-        await page.click("#signin_button");
-        await page.type("#user_login", "username");
-        await page.type("#user_password", "password");
-        await page.click("text=Sign in");
-        
-        await page.goto("http://zero.webappsecurity.com/");
+        loginPage = new LoginPage(page);
+        loginPage.login("username", "password");
+
     });
 
     test("Verify the results for each account", async ({page})=>{
+        await page.waitForLoadState('networkidle');
         await page.click("#account_activity_link");
         await page.click("#account_activity_tab");
 

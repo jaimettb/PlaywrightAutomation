@@ -4,24 +4,20 @@ export class HomePage{
     // Define Selectors
     readonly page: Page;
     readonly userInput: Locator;
-    readonly signInButton: Locator;
     readonly searchBox: Locator;
     readonly linkFeedBack: Locator;
 
     // Init selectors using constructor
     constructor(page:Page){
         this.page = page;
-        this.signInButton = page.locator("#signin_button");
         this.searchBox = page.locator("#searchTerm")
         this.linkFeedBack = page.locator("#feedback");
     }
 
     async visit(){
-        this.page.goto('http://zero.webappsecurity.com/');
-    }
-
-    async clickOnSignIn(){
-        await this.signInButton.click();
+        if (!await this.page.isClosed()) {
+            this.page.goto('http://zero.webappsecurity.com/');
+        }
     }
 
     async clickOnFeedbackLink(){
