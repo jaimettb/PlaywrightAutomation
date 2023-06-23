@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test';
 import { HomePage} from '../../page-objects/HomePage';
 import { LoginPage } from '../../page-objects/LoginPage';
 
-test.describe.parallel.only("Login / Logout Flow", ()=>{
+test.describe.parallel("Login / Logout Flow", ()=>{
     let loginPage: LoginPage;
     let homePage: HomePage;
 
@@ -20,7 +20,7 @@ test.describe.parallel.only("Login / Logout Flow", ()=>{
     });
 
     // Positive scenario
-    test.only("Positive scenario for Loin", async({page})=>{
+    test("Positive scenario for Loin", async({page})=>{
         await homePage.visit();
         await homePage.clickOnSignIn();
         await loginPage.login("username", "password");
