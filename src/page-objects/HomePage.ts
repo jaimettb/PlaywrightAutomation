@@ -6,12 +6,14 @@ export class HomePage{
     readonly userInput: Locator;
     readonly signInButton: Locator;
     readonly searchBox: Locator;
+    readonly linkFeedBack: Locator;
 
     // Init selectors using constructor
     constructor(page:Page){
         this.page = page;
         this.signInButton = page.locator("#signin_button");
         this.searchBox = page.locator("#searchTerm")
+        this.linkFeedBack = page.locator("#feedback");
     }
 
     async visit(){
@@ -20,6 +22,10 @@ export class HomePage{
 
     async clickOnSignIn(){
         await this.signInButton.click();
+    }
+
+    async clickOnFeedbackLink(){
+        await this.linkFeedBack.click();
     }
 
     async searchFor(phrase: string){
