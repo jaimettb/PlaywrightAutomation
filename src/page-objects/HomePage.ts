@@ -10,14 +10,12 @@ export class HomePage{
     // Init selectors using constructor
     constructor(page:Page){
         this.page = page;
-        this.searchBox = page.locator("#searchTerm")
+        this.searchBox = page.locator("#searchTerm");
         this.linkFeedBack = page.locator("#feedback");
     }
 
     async visit(){
-        if (!await this.page.isClosed()) {
-            this.page.goto('http://zero.webappsecurity.com/');
-        }
+        await this.page.goto("http://zero.webappsecurity.com/");
     }
 
     async clickOnFeedbackLink(){
