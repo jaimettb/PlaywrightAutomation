@@ -13,7 +13,8 @@
     "tests:visual:webkit": "playwright test --config=visual.config.ts --project=Webkit",
     "tests:visual:chromeupdate": "playwright test --config=visual.config.ts --project=Chromium --update-snapshoots",
     "tests:visual:firefoxupdate": "playwright test --config=visual.config.ts --project=Firefox --update-snapshoots",
-    "tests:visual:webkitupdate": "playwright test --config=visual.config.ts --project=Webkit --update-snapshoots"
+    "tests:visual:webkitupdate": "playwright test --config=visual.config.ts --project=Webkit --update-snapshoots",
+    "tests:api": "playwright test --config=api.config.ts --project=Chromium"
   },
   "author": "",
   "license": "ISC",
