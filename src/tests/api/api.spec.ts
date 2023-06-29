@@ -26,6 +26,7 @@ test.describe.parallel("API Testing", ()=>{
         expect(responseBody.data.email).toBeTruthy();
     })
 
+    
     test("Post Request - Create New User", async ({request}) => {
         const response = await request.post(`${baseUrl}/users`, {
             data: {
