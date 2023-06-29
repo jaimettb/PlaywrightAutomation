@@ -31,7 +31,7 @@ export class LoginPage extends AbstractPage {
 
         if((await this.errorMessage.count()) == 0){
             // Hack to handle redirect error
-            this.gotoLoginPage();
+            await this.gotoLoginPage();
         }
     }
 
