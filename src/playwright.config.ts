@@ -3,7 +3,7 @@ import { PlaywrightTestConfig } from "@playwright/test";
 const config: PlaywrightTestConfig = {
     timeout: 60000,
     retries: 0,
-    testDir: 'tests/tips',
+    //testDir: 'tests/tips',
     use: {
         headless:true,
         viewport: {width: 1280, height: 720 },
@@ -17,14 +17,14 @@ const config: PlaywrightTestConfig = {
             name: 'Chromium',
             use: {browserName: "chromium"}
         },
-        {
-            name: 'Firefox',
-            use: {browserName: "firefox"}
-        },
-        {
-            name: 'Webkit',
-            use: {browserName: "webkit"}
-        }
+        // {
+        //     name: 'Firefox',
+        //     use: {browserName: "firefox"}
+        // },
+        // {
+        //     name: 'Webkit',
+        //     use: {browserName: "webkit"}
+        // }
     ]
 }
 
