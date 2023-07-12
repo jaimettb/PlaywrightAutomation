@@ -1,12 +1,19 @@
 {
   "name": "cucumber",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.2.0",
+    "chai": "^4.3.7",
+    "cucumber-html-reporter": "^7.1.1",
+    "playwright": "^1.36.0",
+    "prettier": "^3.0.0"
+  }
 }
