@@ -1,0 +1,2 @@
+> To run on windows
+./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet
