@@ -1,4 +1,7 @@
-import { setHeadlessWhen, setCommonPlugins } from '@codeceptjs/configure';
+import {
+  setHeadlessWhen,
+  setCommonPlugins
+} from '@codeceptjs/configure';
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -17,7 +20,8 @@ export const config: CodeceptJS.MainConfig = {
     }
   },
   include: {
-    I: './steps_file'
+    I: './steps_file',
+    loginPagePage: "./pages/LoginPage.ts",
   },
   name: 'Codecept'
 }
